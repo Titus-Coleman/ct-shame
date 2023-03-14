@@ -1,0 +1,14 @@
+{
+  "resourceName": "s3ctshamestoragec1e1045c",
+  "bucketName": "ct-shame-storage-c1e1045c",
+  "policyUUID": "b34cf068",
+  "storageAccess": "authAndGuest",
+  "guestAccess": [
+    "READ"
+  ],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ]
+}
