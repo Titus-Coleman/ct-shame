@@ -1,4 +1,5 @@
 import Layout from "@/components/Layout";
+
 import { Html, Head, Main, NextScript } from "next/document";
 
 export default function Document() {

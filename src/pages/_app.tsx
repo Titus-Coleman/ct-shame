@@ -3,6 +3,7 @@ import awsExports from "../aws-exports";
 import { Amplify } from "aws-amplify";
 import "@aws-amplify/ui-react/styles.css";
 Amplify.configure({ ...awsExports });
+import "../styles/globals.css";
 
 export default function App({ Component, pageProps }: AppProps) {
   return <Component {...pageProps} />;

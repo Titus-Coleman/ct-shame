@@ -1,15 +1,18 @@
 import Head from "next/head";
-
 import { Inter } from "next/font/google";
 import { useState, useEffect } from "react";
 import { Storage } from "aws-amplify";
 import {
   withAuthenticator,
+  Button,
   FileUploader,
   Collection,
   Image,
+  Card,
+  Flex,
 } from "@aws-amplify/ui-react";
 import { S3ProviderListOutputItem } from "@aws-amplify/storage";
+import Navbar from "../components/Navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -48,6 +51,8 @@ function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={""}>
+        <Navbar />
+
         <FileUploader
           acceptedFileTypes={["image/*"]}
           accessLevel="public"
@@ -59,13 +64,20 @@ function Home() {
           items={images}
           type={"grid"}
           padding={"1rem"}
-          maxWidth={"800px"}
+          maxWidth={"100%"}
           margin={"0 auto"}
           justifyContent={"center"}
         >
           {(item, index) => (
             <picture key={index}>
-              <Image src={item} alt={""} />
+              <Card
+                borderRadius={"3rem"}
+                backgroundColor={"black"}
+                boxShadow={"10px 5px 5px grey"}
+                margin={"1rem"}
+              >
+                <Image src={item} alt={""} />
+              </Card>
             </picture>
           )}
         </Collection>
